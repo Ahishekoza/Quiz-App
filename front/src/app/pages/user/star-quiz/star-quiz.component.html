@@ -1,0 +1,84 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-md-2">
+
+               <h3>Instruction</h3>
+            </div>
+            
+            <div class="col-md-8">
+                <ng-container *ngIf="questions">
+                    <h1 class="mt-10"> On Going {{questions[0].quize.title}}</h1>
+                </ng-container>
+
+                <mat-card *ngFor="let q of questions ;   let i = index"  class="mt-10">
+
+                    <mat-card-content>
+                        <p><b>Q{{i+1}})</b><span class="ml-10">{{q.content}}</span></p>
+                    </mat-card-content>
+
+
+
+                    <mat-divider></mat-divider>
+
+                    <div class="row mt-20">
+                        <div class="col-md-6">
+
+                            <input type="radio" name="option1" 
+                            [value]="q.option1" id="" >{{q.option1}}
+                        </div>
+                        <div class="col-md-6">
+                            <input type="radio" name="option2" 
+                            [value]="q.option2" id="" >{{q.option2}}
+                        </div>
+                    </div>
+
+                    <div class="row mt-20">
+                        <div class="col-md-6">
+
+                            <input type="radio" name="option3" 
+                            [value]="q.option3" id="" >{{q.option3}}
+                        </div>
+                        <div class="col-md-6">
+                            <input type="radio" 
+                            [value]="q.option4"
+                            name="option4" 
+                            [(ngModel)]="q.givenAnswer"
+                            
+                            id="" >{{q.option4}}
+                        </div>
+                    </div>
+                </mat-card>
+
+
+                <div class="container text-center mt-20" >
+                    <button mat-raised-button color="primary" (click)="SubmitQuiz()">Submit Quiz</button>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+
+                <mat-card class="mt-20">
+                    <mat-card-header>
+                        <mat-card-title>
+                            Progress
+                            <mat-card-subtitle>
+                                Quiz will get submitted automatically
+                                when timer reaches 0.0 
+                            </mat-card-subtitle>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-spinner 
+                        mode="determinate"
+                        [value]="(timmer/(this.questions.length*2*60))*100"
+                        class="mx-auto"></mat-spinner>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+
+        </div>
+    </div>
+</div>

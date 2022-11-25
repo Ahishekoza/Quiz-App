@@ -1,0 +1,32 @@
+<mat-card>
+
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>
+            <h1>Update {{userData.firstName}}'s  profile</h1>
+        </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="mt-20">
+        <mat-form-field appearance="fill" class="w100 mt-20">
+            <mat-label>New Password</mat-label>
+            <input
+            [(ngModel)]="userData.password"
+            name="password"
+            type="password"
+            placeholder="Enter your new password"
+            required
+            matInput>
+          </mat-form-field>
+    
+    
+    
+          <div class="container text-center">
+            <button mat-raised-button color="primary" (click)="updatePassword()" >Update Password</button>
+          </div>
+    </mat-card-content>
+
+    
+
+</mat-card>
+

@@ -1,0 +1,54 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card class="mt-20">
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Read the instructions carefully!
+                            <mat-card-subtitle>
+                                one step to go!!
+                            </mat-card-subtitle>
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="ml-20">
+                        <h1>{{quizData.title}}</h1>
+                        <h3>{{quizData.description}}</h3>
+
+                        <mat-divider></mat-divider>
+                        <br>
+
+                        <h1>Important Instructions !! </h1>
+
+                        <ul>
+                            <li>This quiz is for pratice purpose.</li>
+                            <li>You have to complete the quiz within {{quizData.noOfQuestions*2}} minutes.</li>
+                            <li>You can attain quiz any number of times</li>
+                            <li>There are <b>{{quizData.noOfQuestions}} questions </b> in the quiz</li>
+                            <li>Each question carries <b>{{quizData.maxMarks/quizData.noOfQuestions}} marks</b> in the quiz</li>
+                            <li>No Negative Marking for wrong questions</li>
+                            <li>All questions are of MCQ type</li>
+                        </ul>
+
+                        <mat-divider> </mat-divider>
+                            <h1>Attempting Quiz</h1>
+                            <ul>
+                                <li>Click on Start to start the Quiz</li>
+                            </ul>
+                       
+
+                    </mat-card-content>
+
+                    <mat-card-actions class="text-center">
+
+                        <button mat-raised-button color="primary" (click)="StartNot()">Start Quiz</button>
+                    </mat-card-actions>
+
+                    <!-- [routerLink]="'/start/'+quizData.qId" -->
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
